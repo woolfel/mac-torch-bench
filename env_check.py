@@ -1,3 +1,5 @@
+# Simple python test imports Torch and Math, then use the GPU to do some calculations
+# if it runs successfully, it means torch is setup properly and uses the GPU
 import torch
 import math
 
