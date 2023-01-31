@@ -14,7 +14,8 @@ keep_difficult = True  # use objects considered difficult to detect?
 # Model parameters
 # Not too many here since the SSD300 has a very specific structure
 dtype = torch.float
-device = torch.device("mps")
+# it runs on "cpu", but if we change it to "mps" it won't run
+device = torch.device("cpu")
 n_classes = len(label_map)  # number of different types of objects
 
 # Learning parameters
