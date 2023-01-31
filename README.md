@@ -2,6 +2,10 @@
 
 A simple set of test to benchmark Apple M1. It's not meant to produce useful models! It's meant to push the hardware to see how it performs under different loads. Does more memory and GPU matter and how much?
 
+Thanks to sgrvinod example on github. I borrowed code from his example, but had to tweak it heavily to get CPU to run on MacOS. Still trying to get it to run on M2Max GPU.
+
+[https://github.com/sgrvinod/a-PyTorch-Tutorial-to-Object-Detection] pytorch tutorial by sgrvinod
+
 # Install Conda
 
 The benchmark uses conda to create an environment and installs the necessary tensorflow packages. You can download miniconda package and install it.
