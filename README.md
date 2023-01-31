@@ -1,6 +1,6 @@
 # mac-torch-bench
 
-TODO - add instructions
+A simple set of test to benchmark Apple M1. It's not meant to produce useful models! It's meant to push the hardware to see how it performs under different loads. Does more memory and GPU matter and how much?
 
 # Install Conda
 
