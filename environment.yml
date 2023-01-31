@@ -1,0 +1,15 @@
+name: torch_bench
+channels:
+  - pytorch-nightly
+  - conda-forge
+dependencies:
+  - python=3.8
+  - pytorch
+  - torchvision
+  - torchaudio
+  - jupyter
+  - jupyterlab
+  - pip:
+      - numpy
+      - marshmallow
+      - pycocotools
