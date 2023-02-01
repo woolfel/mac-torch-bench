@@ -10,6 +10,7 @@ dependencies:
   - jupyter
   - jupyterlab
   - pip:
+      - torch-summary
       - numpy
       - marshmallow
       - pycocotools
