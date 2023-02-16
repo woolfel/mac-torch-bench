@@ -1,0 +1,23 @@
+name: torch_bench
+channels:
+  - pytorch-nightly
+  - conda-forge
+  - nvidia
+dependencies:
+  - python=3.8
+  - pytorch-cuda
+  - torchvision
+  - torchaudio
+  - jupyter
+  - jupyterlab
+  - pip:
+      - torch-summary
+      - numpy
+      - marshmallow
+      - pycocotools
+      - jupyter
+      - jupyterlab
+      - pandas
+      - matplotlib
+      - scikit-learn
+      - tqdm

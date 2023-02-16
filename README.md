@@ -10,6 +10,14 @@ Thanks to sgrvinod example on github. I borrowed code from his example, but had 
 
 The benchmark uses conda to create an environment and installs the necessary tensorflow packages. You can download miniconda package and install it.
 
+## MacOS
+
+conda env update -f environment.yml
+
+## Windows
+
+conda env create -f environment-win.yml
+
 [https://docs.conda.io/en/latest/miniconda.html#macos-installers] installers
 
 Select ARM 64 pkg and run the installer.
