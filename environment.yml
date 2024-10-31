@@ -3,20 +3,14 @@ channels:
   - pytorch-nightly
   - conda-forge
 dependencies:
-  - python=3.8
+  - python=3.10
   - pytorch
   - torchvision
   - torchaudio
   - jupyter
   - jupyterlab
   - pip:
-      - torch-summary
-      - numpy
-      - marshmallow
-      - pycocotools
-      - jupyter
-      - jupyterlab
       - pandas
-      - matplotlib
-      - scikit-learn
-      - tqdm
+      - torch
+      - torchvision
+      - torchaudio
