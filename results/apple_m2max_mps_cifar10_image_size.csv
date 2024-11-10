@@ -1,0 +1,2 @@
+machine,device,dataset_name,epochs,batch_size,image_size,num_train_samples,num_test_samples,total_train_time,time_per_epoch,model
+Apple M2Max,mps,cifar10,40,32,224,50000,10000,2563.252,64.081,TinyVGG
