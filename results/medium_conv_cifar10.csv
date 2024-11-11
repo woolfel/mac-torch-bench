@@ -1,0 +1,3 @@
+machine,device,dataset_name,epochs,batch_size,image_size,num_train_samples,num_test_samples,total_train_time,model
+m1max 64G,mps,cifar10,40,1000,32,5000,1000,850,MediumCNN
+m2max 96G,mps,cifar10,40,1000,32,5000,1000,589,MediumCNN
