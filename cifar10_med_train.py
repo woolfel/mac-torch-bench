@@ -7,6 +7,7 @@ import time
 import multiprocessing
 import sys
 import os
+from torchsummary import summary
 
 print("Torch version - ", torch.__version__)
 multiprocessing.set_start_method('spawn', force=True)
@@ -157,6 +158,7 @@ def train_and_benchmark(epochs, batchSize, checkpoint_dir="checkpoints"):
 
     total_duration = time.time() - start_time
     print(f"\nTraining completed in {total_duration:.2f} seconds over {epochs} epochs")
+    summary(model, input_size=(3,32,32))
 
 def main():
     args = sys.argv[0:]
@@ -176,7 +178,7 @@ def main():
         pass  # Start method can only be set once per session, ignore if already set.
 
     # Run the benchmark
-    train_and_benchmark(epochs, batchSize, "checkpoints")
+    train_and_benchmark(epochs, batchSize, "checkpoints2")
 
 if __name__ == "__main__":
     main()
