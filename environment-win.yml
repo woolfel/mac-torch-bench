@@ -1,23 +1,16 @@
-name: torch_bench
+name: torch_new
 channels:
-  - pytorch-nightly
+  - pytorch
   - conda-forge
   - nvidia
 dependencies:
-  - python=3.8
+  - python=3.10
+  - pytorch
   - pytorch-cuda
   - torchvision
   - torchaudio
-  - jupyter
-  - jupyterlab
+  - cudatoolkit=11.8
+  - pandas
   - pip:
-      - torch-summary
-      - numpy
-      - marshmallow
-      - pycocotools
-      - jupyter
-      - jupyterlab
-      - pandas
-      - matplotlib
-      - scikit-learn
-      - tqdm
+    - torch-summary
+    - numpy
