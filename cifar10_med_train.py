@@ -64,24 +64,6 @@ class MediumCNN(nn.Module):
 device = torch.device("mps" if torch.backends.mps.is_available() else "cpu")
 print(f"Using device: {device}")
 
-def loadDataset(batch_size):
-    # Load CIFAR-10 dataset
-    transform = transforms.Compose(
-        [transforms.ToTensor(),
-        transforms.Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5))]
-    )
-
-    trainset = torchvision.datasets.CIFAR10(root='./data', train=True, download=True, transform=transform)
-    trainloader = torch.utils.data.DataLoader(trainset, batch_size=batch_size, shuffle=True, num_workers=2)
-
-    testset = torchvision.datasets.CIFAR10(root='./data', train=False, download=True, transform=transform)
-    testloader = torch.utils.data.DataLoader(testset, batch_size=batch_size, shuffle=False, num_workers=2)
-
-    # Initialize model, loss function, and optimizer
-    model = MediumCNN().to(device)
-    criterion = nn.CrossEntropyLoss()
-    optimizer = optim.Adam(model.parameters(), lr=0.001)
-
 def save_checkpoint(model, optimizer, epoch, checkpoint_dir="checkpoints"):
     os.makedirs(checkpoint_dir, exist_ok=True)
     checkpoint_path = os.path.join(checkpoint_dir, f"epoch_{epoch}.pth")
@@ -98,7 +80,6 @@ def train_and_benchmark(epochs, batchSize, checkpoint_dir="checkpoints"):
     print("Batch size - ", batchSize)
 
     model = MediumCNN().to(device)
-    loadDataset(batchSize)
     criterion = nn.CrossEntropyLoss()
     optimizer = optim.Adam(model.parameters(), lr=0.001)
 
@@ -110,6 +91,10 @@ def train_and_benchmark(epochs, batchSize, checkpoint_dir="checkpoints"):
 
     trainset = torchvision.datasets.CIFAR10(root='./data', train=True, download=True, transform=transform)
     trainloader = torch.utils.data.DataLoader(trainset, batch_size=batchSize, shuffle=True, num_workers=0)
+
+    testset = torchvision.datasets.CIFAR10(root='./data', train=False, download=True, transform=transform)
+    testloader = torch.utils.data.DataLoader(testset, batch_size=batchSize, shuffle=False, num_workers=0)
+
 
     start_time = time.time()
     model.train()  # Set the model to training mode
